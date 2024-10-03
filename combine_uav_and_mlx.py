@@ -57,21 +57,21 @@ for index, row in uav_data.iterrows():
 
         # Check if all values are 'N/A'
         if all(pd.isnull(temp_overall_values)):
-            mlx_mean_temp_overall = 'N/A'
+            mlx_mean_temp_overall = pd.NA
         else:
             # Remove 'N/A' values and calculate the mean
             temp_overall_valid_values = temp_overall_values[~pd.isnull(temp_overall_values)]
             mlx_mean_temp_overall = temp_overall_valid_values.mean()
 
         if all(pd.isnull(temp_canopy_values)):
-            mlx_mean_temp_canopy = 'N/A'
+            mlx_mean_temp_canopy = pd.NA
         else:
             # Remove 'N/A' values and calculate the mean
             temp_canopy_valid_values = temp_canopy_values[~pd.isnull(temp_canopy_values)]
             mlx_mean_temp_canopy = temp_canopy_valid_values.mean()
 
     else:
-        mlx_mean_temp_overall, mlx_mean_temp_canopy = 'N/A', 'N/A'
+        mlx_mean_temp_overall, mlx_mean_temp_canopy = pd.NA, pd.NA
     row_id = index + 1
     data = {'index': row_id, 'day': day, 'cam_no': cam_no, 'date': date, 'uav_mean': mean,
             'uav_median': median, 'uav_percent95': percent95, 'mlx_overall_mean': mlx_mean_temp_overall,

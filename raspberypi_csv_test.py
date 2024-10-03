@@ -10,8 +10,6 @@ from datetime import datetime
 # specify the cam number
 cam_number = '7'
 
-
-
 process_thermal = True
 mlx_temp_mappings = True
 
@@ -161,7 +159,6 @@ for i in range(len(split_text) - 1):
         lepton_image = image_folder + 'lepton/' + lepton_img_name
         print("Lepton Image: " + lepton_image)
         read_lepton_image = cv2.imread(lepton_image)
-
 
         # image = Image.open('C:/Users/lochana.marasingha/Downloads/date_4-4-2024_16.28.19_1.png')
         # # Get the mode (which indicates the bit depth)
